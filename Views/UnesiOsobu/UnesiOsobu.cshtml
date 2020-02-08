@@ -1,0 +1,32 @@
+﻿@model OIBValidation.Models.Osoba
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UnesiOsobu</title>
+</head>
+<body>
+    @using (Html.BeginForm("UnesiOsobu", "UnesiOsobu", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        <div>
+            @Html.LabelFor(x => x.Ime)
+            @Html.EditorFor(x => x.Ime)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Prezime)
+            @Html.EditorFor(x => x.Prezime)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.OIB)
+            @Html.EditorFor(x => x.OIB)
+        </div>
+        <button type="submit">Posalji</button>
+    }
+</body>
+</html>
